@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "carta-framework"
+version = "1.0.0"
+description = "A flexible RAG (Retrieval-Augmented Generation) framework for building intelligent chatbots"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    {name = "Carta Team"}
+]
+keywords = ["rag", "chatbot", "llm", "ai", "vector-database", "embeddings"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "chromadb>=0.4.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "google-genai>=0.1.0",
+    "openai>=1.0.0",
+    "groq>=0.4.0",
+    "httpx>=0.24.0",
+    "pdfplumber>=0.11.0",
+    "pypdfium2>=4.18.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/djdo/carta-framework"
+Documentation = "https://github.com/djdo/carta-framework#readme"
+Repository = "https://github.com/djdo/carta-framework"
+
+[tool.setuptools]
+packages = ["carta_framework", "carta_framework.llm", "carta_framework.extensions", "carta_framework.vector_store", "carta_framework.state"]
+package-dir = {"carta_framework" = "."}
